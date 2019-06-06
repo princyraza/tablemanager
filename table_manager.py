@@ -191,10 +191,7 @@ class TableManager:
             QtWidgets.QMessageBox.warning(self.iface.mainWindow(), QCoreApplication.translate('TableManager','Table manager'), QCoreApplication.translate('TableManager','Please select a vector layer'))
         elif layer.isEditable():
             QtWidgets.QMessageBox.warning(self.iface.mainWindow(), QCoreApplication.translate('TableManager','Table manager'), QCoreApplication.translate('TableManager','The selected layer is currently in editing mode.\nPlease exit this mode before managing the table.'))
-        elif self.first_start:
-            # Create the dialog with elements (after translation) and keep reference
-            # Only create GUI ONCE in callback, so that it will only load when the plugin is started
-            self.first_start = False
+        else:
             self.dlg = TableManagerDialog(self.iface)
             self.dlg.show()
             result = self.dlg.exec_()
