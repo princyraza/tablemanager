@@ -704,8 +704,5 @@ p, li { white-space: pre-wrap; }
   <tabstop>butSaveAs</tabstop>
   <tabstop>butSave</tabstop>
  </tabstops>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
  <connections/>
 </ui>

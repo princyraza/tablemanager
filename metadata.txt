@@ -1,38 +1,39 @@
-# This file contains metadata for your plugin. Beginning
-# with version 1.8 this is the preferred way to supply information about a
-# plugin. The current method of embedding metadata in __init__.py will
-# be supported until version 2.0
+# This file contains metadata for your plugin. Since
+# version 2.0 of QGIS this is the proper way to supply
+# information about a plugin. The old method of
+# embedding metadata in __init__.py will
+# is no longer supported since version 2.0.
 
-# This file should be included when you package your plugin.
-
-# Mandatory items:
-
+# This file should be included when you package your plugin.# Mandatory items:
 
 [general]
 name=Table Manager
-description=Manages the attribute table structure
-description[pl]=Zarządza strukturą tabeli atrybutów
-about=This plugin was created as a workaround for removing and renaming columns in dbf tables, when there was no built-in solution in QGIS. Currently, its development is depreciated, so please consider using the Refactor Field algorithm from the Pocessing panel (advanced interface).
-version=0.6.3
 qgisMinimumVersion=3.0
+description=An Implementation of Borys Jurgiel's Table Manager for QGIS 3.0
+version=0.1
+author=Princy R.
+email=princy.raza@gmail.com
 
-# Optional items:
+about=An Implementation of Borys Jurgiel's Table Manager for QGIS 3.0
 
+tracker=https://github.com/princyraza/tablemanager
+repository=https://github.com/princyraza/tablemanager
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
 # changelog=
 
-# tags are comma separated with spaces allowed
-tags=attribute table,table,fields,vector
-category=Vector
+# Tags are comma separated with spaces allowed
+tags=python
 
-homepage=https://github.com/borysiasty/tablemanager
-tracker=https://github.com/borysiasty/tablemanager/issues
-repository=https://github.com/borysiasty/tablemanager
+homepage=https://github.com/princyraza/tablemanager
+category=Plugins
 icon=icons/tableManagerIcon.png
+# experimental flag
 experimental=False
 
-# deprecated flag (applies to the whole plugin, not just a single version
+# deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
 
-# Author contact information
-author=Borys Jurgiel
-email=qgis@borysjurgiel.pl

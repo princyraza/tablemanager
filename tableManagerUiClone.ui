@@ -108,7 +108,6 @@
   <tabstop>comboDsn</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
- <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>
