@@ -26,6 +26,7 @@ import os
 
 from PyQt5 import uic
 from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from qgis.core import *
@@ -192,17 +193,28 @@ class TableManagerDialog(QtWidgets.QDialog, MAIN_DIALOG):
     self.selection = -1     # Don't highlight any field on startup
     self.selection_list = [] #Update: Santiago Banchero 09-06-2009
 
-    QObject.connect(self.butUp, SIGNAL('clicked()'), self.doMoveUp)
-    QObject.connect(self.butDown, SIGNAL('clicked()'), self.doMoveDown)
-    QObject.connect(self.butDel, SIGNAL('clicked()'), self.doDelete)
-    QObject.connect(self.butIns, SIGNAL('clicked()'), self.doInsert)
-    QObject.connect(self.butClone, SIGNAL('clicked()'), self.doClone)
-    QObject.connect(self.butRename, SIGNAL('clicked()'), self.doRename)
-    QObject.connect(self.butSave, SIGNAL('clicked()'), self.doSave)
-    QObject.connect(self.butSaveAs, SIGNAL('clicked()'), self.doSaveAs)
-    QObject.connect(self.buttonBox, SIGNAL('rejected()'), self.doDone)
-    QObject.connect(self.fieldsTable, SIGNAL('itemSelectionChanged ()'), self.selectionChanged)
-    QObject.connect(self.tabWidget, SIGNAL('currentChanged (int)'), self.drawDataTable)
+    # QObject.connect(self.butUp, SIGNAL('clicked()'), self.doMoveUp)
+    self.butUp.clicked.connect(self.doMoveUp)
+    # QObject.connect(self.butDown, SIGNAL('clicked()'), self.doMoveDown)
+    self.butDown.clicked.connect(self.doMoveDown)
+    # QObject.connect(self.butDel, SIGNAL('clicked()'), self.doDelete)
+    self.butDel.clicked.connect(self.doDelete)
+    # QObject.connect(self.butIns, SIGNAL('clicked()'), self.doInsert)
+    self.butIns.clicked.connect(self.doInsert)
+    # QObject.connect(self.butClone, SIGNAL('clicked()'), self.doClone)
+    self.butClone.clicked.connect(self.doClone)
+    # QObject.connect(self.butRename, SIGNAL('clicked()'), self.doRename)
+    self.butRename.clicked.connect(self.doRename)
+    # QObject.connect(self.butSave, SIGNAL('clicked()'), self.doSave)
+    self.butSave.clicked.connect(self.doSave)
+    # QObject.connect(self.butSaveAs, SIGNAL('clicked()'), self.doSaveAs)
+    self.butSaveAs.clicked.connect(self.doSaveAs)
+    # QObject.connect(self.buttonBox, SIGNAL('rejected()'), self.doDone)
+    self.buttonBox.rejected.connect(self.doDone)
+    # QObject.connect(self.fieldsTable, SIGNAL('itemSelectionChanged ()'), self.selectionChanged)
+    self.fieldsTable.itemSelectionChanged.connect(self.selectionChanged)
+    # QObject.connect(self.tabWidget, SIGNAL('currentChanged (int)'), self.drawDataTable)
+    self.tabWidget.currentChanged.connect(self.drawDataTable)
 
     self.setWindowTitle(self.tr('Table Manager: {0}').format(self.layer.name()))
     self.progressBar.setValue(0)
